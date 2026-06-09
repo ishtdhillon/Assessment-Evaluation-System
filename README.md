@@ -96,3 +96,32 @@ http://127.0.0.1:3000
 * Excel import/export
 * Result analytics dashboard
 * Cloud deployment
+
+## Screenshots
+
+### Login Page
+![Login Page](screenshots/login_page.png)
+
+### HOD Dashboard
+![HOD Dashboard](screenshots/hod_dashboard.png)
+
+### Faculty Dashboard
+![Faculty Dashboard](screenshots/faculty_dashboard.png)
+
+### Adding Faculty
+![Adding Faculty](screenshots/assign_faculty.png)
+
+### Assigning Subjects
+![Assigning Subjects](screenshots/assign_subjects.png)
+
+### Adding Students
+![Adding Students](screenshots/students.png)
+
+### Generating Marksheet
+![Generating Marksheet](screenshots/marksheet.png)
+
+### Assessment
+![Assessment](screenshots/marksheet_details.png)
+
+### Results
+![Results](screenshots/results.png)
