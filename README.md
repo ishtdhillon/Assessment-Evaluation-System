@@ -1,77 +1,98 @@
-# CSE Result Portal Prototype
+# Assessment Evaluation System
 
-Computer Science department result workflow with a lightweight Node backend, SQLite persistence, and backend-verified auth.
+A web-based academic assessment management platform designed to streamline result processing and award sheet generation within educational institutions.
 
-## Included Flows
+## Overview
 
-- HOD / admin dashboard for:
-  - semester and class setup
-  - subject creation with course code and marks scheme
-  - faculty onboarding
-  - faculty-to-subject assignment
-  - student roster upload
-  - result sheet review
-- Faculty phone number plus OTP sign-in with server-issued demo OTP
-- Faculty dashboard with assigned subjects only
-- Searchable marks entry by roll no, UID, or name
-- Internal, external, total, attendance, and grade handling
-- Print-ready PDF export using the browser print dialog
+The system provides separate portals for HODs and faculty members. HODs can manage students, subjects, semesters, and faculty assignments, while faculty members can securely enter marks for their assigned subjects and generate standardized result sheets.
 
-## Files
+The platform reduces manual paperwork, minimizes formatting errors, and ensures consistency in academic assessment records.
 
-- `index.html`
-- `app.js`
-- `styles.css`
-- `server.js`
-- `data/state.db` created automatically on first save
+## Features
 
-## Run
+### HOD Module
 
-Install nothing extra, then start the bundled local server:
+* Add and manage students
+* Add and manage faculty members
+* Create subjects and semesters
+* Assign subjects to faculty
+* Review result sheets and academic records
 
-```powershell
+### Faculty Module
+
+* Secure authentication
+* View assigned subjects and classes
+* Search students by Roll Number, UID, or Name
+* Enter internal and external assessment marks
+* Generate standardized marksheets
+
+### Result Management
+
+* Automated total and grade calculation
+* Centralized record storage
+* Print-ready PDF generation
+* Consistent marksheet formatting across departments
+
+## Technology Stack
+
+**Frontend**
+
+* HTML
+* CSS
+* JavaScript
+
+**Backend**
+
+* Node.js
+* Express.js
+
+**Database**
+
+* SQLite
+
+**Authentication**
+
+* OTP-based Faculty Login
+* Session Management
+* Role-Based Access Control (RBAC)
+
+## Screenshots
+
+### Login Page
+
+(Add Screenshot)
+
+### HOD Dashboard
+
+(Add Screenshot)
+
+### Faculty Dashboard
+
+(Add Screenshot)
+
+### Marks Entry Interface
+
+(Add Screenshot)
+
+### Generated Marksheet
+
+(Add Screenshot)
+
+## Installation
+
+```bash
+npm install
 npm start
 ```
 
-Open `http://127.0.0.1:3000`.
+Open:
 
-You can still open `index.html` directly, but backend persistence will only work when the app is served through `server.js`.
+http://127.0.0.1:3000
 
-## Demo Access
+## Future Enhancements
 
-Admin:
-
-- Username: `hod.cse`
-- Password: `CSE@123`
-
-Faculty demo phones:
-
-- `9876543210`
-- `9876501234`
-
-## Auth Notes
-
-- Admin login is verified on the backend instead of in browser state.
-- Faculty OTP requests and verification are handled by backend routes.
-- Session state is stored in an HTTP-only cookie, then merged into `/api/state`.
-- After the first backend seed, saving portal changes requires a signed-in session.
-
-## Role-Based API Notes
-
-- Admin CRUD now goes through dedicated routes for faculty, semesters, subjects, assignments, and students.
-- Faculty marks entry now goes through dedicated marksheet routes instead of broad full-state writes.
-- Full `PUT /api/state` is now treated as an admin-only seed/reset path rather than the normal save flow.
-
-## Prototype Notes
-
-- Portal data is saved to `data/state.db` through the local backend.
-- If an older `data/state.json` file exists, the server imports it into SQLite automatically the first time it starts.
-- The browser also keeps a local cache so the UI can recover gracefully if the backend is unavailable.
-- OTP is still simulated for this project, but it is now generated and checked by the backend instead of the browser.
-- `Download PDF` opens a print-ready document. Choose `Save as PDF` in the browser dialog.
-
-## Recommended Production Stack
-
-- Firebase for the fastest student project implementation
-- Supabase for a balanced auth + database setup
-- Node.js + MySQL if you want a custom backend
+* Email notifications
+* Student portal
+* Excel import/export
+* Result analytics dashboard
+* Cloud deployment
