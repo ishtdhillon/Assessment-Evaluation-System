@@ -1,0 +1,5 @@
+data/state.db
+data/state.json
+
+node_modules/
+.env

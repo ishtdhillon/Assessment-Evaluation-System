@@ -1,0 +1,16 @@
+[
+  {
+    "id": "faculty-dptvhm6c",
+    "name": "Dr. Meera Nair",
+    "username": "",
+    "password": "",
+    "sort_order": 0
+  },
+  {
+    "id": "faculty-l74gbn40",
+    "name": "Arjun Rao",
+    "username": "",
+    "password": "",
+    "sort_order": 1
+  }
+]
